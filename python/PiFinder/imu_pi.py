@@ -33,6 +33,24 @@ class Imu:
                 adafruit_bno055.AXIS_REMAP_POSITIVE,
                 adafruit_bno055.AXIS_REMAP_NEGATIVE,
             )
+        elif cfg.get_option("screen_direction") == "flat-legacy-imu":
+            self.sensor.axis_remap = (
+                adafruit_bno055.AXIS_REMAP_Y,
+                adafruit_bno055.AXIS_REMAP_X,
+                adafruit_bno055.AXIS_REMAP_Z,
+                adafruit_bno055.AXIS_REMAP_NEGATIVE,
+                adafruit_bno055.AXIS_REMAP_NEGATIVE,
+                adafruit_bno055.AXIS_REMAP_NEGATIVE,
+            )
+        elif cfg.get_option("screen_direction") == "left-legacy-imu" or cfg.get_option("screen_direction") == "right-legacy-imu" :
+            self.sensor.axis_remap = (
+                adafruit_bno055.AXIS_REMAP_Z,
+                adafruit_bno055.AXIS_REMAP_Y,
+                adafruit_bno055.AXIS_REMAP_X,
+                adafruit_bno055.AXIS_REMAP_NEGATIVE,
+                adafruit_bno055.AXIS_REMAP_NEGATIVE,
+                adafruit_bno055.AXIS_REMAP_POSITIVE,
+            )
         else:
             self.sensor.axis_remap = (
                 adafruit_bno055.AXIS_REMAP_Z,
