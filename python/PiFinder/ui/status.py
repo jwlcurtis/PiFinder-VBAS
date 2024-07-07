@@ -61,7 +61,7 @@ class UIStatus(UIModule):
         "Mnt Side": {
             "type": "enum",
             "value": "",
-            "options": ["right", "left", "flat", "CANCEL"],
+            "options": ["right", "left", "flat","right-legacy-imu","left-legacy-imu","flat-legacy-imu", "CANCEL"],
             "callback": "side_switch",
         },
         "Mnt Type": {
